@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spikes
+  - DeathScreen
+  - Enemy
+  - GameManager
+  - Bullet
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

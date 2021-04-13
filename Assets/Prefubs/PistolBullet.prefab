@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1962557943657378958}
   m_Layer: 0
   m_Name: PistolBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,4 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 4
+  damage: 1
+  impactEffect: {fileID: 2925721194050890343, guid: 2e5d2ec3c72de154cbbbc192f2e4c764, type: 3}
   body: {fileID: 2864383262309165833}

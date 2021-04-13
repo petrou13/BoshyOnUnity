@@ -36,9 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scriptes\PlayerMovement.cs" />
-     <Compile Include="Assets\Scriptes\Weapon.cs" />
      <Compile Include="Assets\Scriptes\Bullet.cs" />
+     <Compile Include="Assets\Scriptes\Weapon.cs" />
+     <Compile Include="Assets\Scriptes\PlayerMovement.cs" />
+     <Compile Include="Assets\Scriptes\Spikes.cs" />
+     <Compile Include="Assets\Scriptes\LevelManager.cs" />
+     <Compile Include="Assets\Scriptes\Enemy.cs" />
+     <Compile Include="Assets\Scriptes\GameManager.cs" />
+     <Compile Include="Assets\Scriptes\Checkpoint.cs" />
     <Reference Include="UnityEngine">
         <HintPath>E:/UnityEditors/2020.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -692,6 +697,12 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>E:/UNITYSHARAGAPRACTS/Hadmud/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>E:/UNITYSHARAGAPRACTS/Hadmud/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>E:/UNITYSHARAGAPRACTS/Hadmud/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
