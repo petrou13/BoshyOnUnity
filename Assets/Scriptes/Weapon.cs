@@ -13,26 +13,26 @@ public class Weapon : MonoBehaviour
     {
         if (!autoShoot)
         {
-            if (Input.GetKeyDown(KeyCode.Z))  //стрельба без автострельбы
+            if (Input.GetKeyDown(KeyCode.X))  //стрельба без автострельбы
             {
                 Shoot();       //Может поставить ограничения?
             }
         }
         else
         {
-            if (Input.GetKey(KeyCode.Z) && Time.time > nextFire && bulletsFired != 5)  //стрельба с автострельбой
+            if (Input.GetKey(KeyCode.X) && Time.time > nextFire && bulletsFired != 5)  //стрельба с автострельбой
             {
                 nextFire = Time.time + fireRate;  //задержка в стрельбе
                 Shoot();
                 bulletsFired++;
             }
-            else if (Input.GetKey(KeyCode.Z) && bulletsFired == 5)  //исключение возможности бесконечной стрельбы
+            else if (Input.GetKey(KeyCode.X) && bulletsFired == 5)  //исключение возможности бесконечной стрельбы
             {
                 bulletsFired = 0;
                 nextFire = Time.time + 1;
             }
 
-            if (Input.GetKeyUp(KeyCode.Z))  //если игрок соблюдает тайминги, то это ему поощрается и счетчик сбрасывается
+            if (Input.GetKeyUp(KeyCode.X))  //если игрок соблюдает тайминги, то это ему поощрается и счетчик сбрасывается
             {
                 bulletsFired = 0;
             }

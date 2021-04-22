@@ -10,6 +10,14 @@ TagManager:
   - GameManager
   - Bullet
   - Checkpoint
+  - Confiner
+  - JumpBuster
+  - NPC
+  - TalkInfo
+  - DialogManager
+  - DialogCanvas
+  - GravityButton
+  - Edge
   layers:
   - Default
   - TransparentFX
@@ -18,8 +26,8 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - Wall
+  - Skybox
   - 
   - 
   - 
@@ -46,4 +54,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: DialogCanvas
+    uniqueID: 729262351
     locked: 0

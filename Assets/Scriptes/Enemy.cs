@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,6 +8,11 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage) //получение урона
     {
+        if (damage < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(damage));
+        }
+
         health -= damage;
         if (health <= 0)
         {

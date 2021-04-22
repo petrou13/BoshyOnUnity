@@ -4,7 +4,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     GameObject player;
+    [SerializeField]
     private static GameManager instance;
+    [SerializeField]
     public Vector2 savedPosition;
     void Awake()
     {
