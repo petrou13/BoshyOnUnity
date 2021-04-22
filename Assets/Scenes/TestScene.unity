@@ -1753,6 +1753,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2946787968028444725, guid: 9a8d5f7e90f08a841bc69c0722ee6f51, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428629460532978471, guid: 9a8d5f7e90f08a841bc69c0722ee6f51, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0312789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428629460532978471, guid: 9a8d5f7e90f08a841bc69c0722ee6f51, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00014499947
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428629460532978471, guid: 9a8d5f7e90f08a841bc69c0722ee6f51, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05663945
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a8d5f7e90f08a841bc69c0722ee6f51, type: 3}
 --- !u!1001 &3893376516290932153
@@ -1867,6 +1883,18 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1817791027}
+    - target: {fileID: 4492505860206717602, guid: 0492a58ae4027334bb62d945276015c0, type: 3}
+      propertyPath: sceneName
+      value: TutorialScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492505860206717602, guid: 0492a58ae4027334bb62d945276015c0, type: 3}
+      propertyPath: nextWorldStartPosition.x
+      value: -8.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492505860206717602, guid: 0492a58ae4027334bb62d945276015c0, type: 3}
+      propertyPath: nextWorldStartPosition.y
+      value: -2.06
+      objectReference: {fileID: 0}
     - target: {fileID: 4492505860206717789, guid: 0492a58ae4027334bb62d945276015c0, type: 3}
       propertyPath: m_Name
       value: Teleporter

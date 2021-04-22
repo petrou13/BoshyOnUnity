@@ -4,10 +4,10 @@ public class JumpBuster : MonoBehaviour
 {
     private PlayerMovement player;  //игрок
     public float respawnTime = 1f;
-    private Object busterRef;
+    public Object busterRef;
     void Start()
     {
-        busterRef = Resources.Load("JumpBuster");
+        //busterRef = Resources.Load("JumpBuster");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();  //поиск игрока
     }
 
@@ -27,8 +27,11 @@ public class JumpBuster : MonoBehaviour
 
     void RespawnBuster()  //респавн бустера
     {
-        GameObject busterClone = (GameObject)Instantiate(busterRef);
-        busterClone.transform.position = transform.position;
-        Destroy(gameObject);
+        gameObject.SetActive(true);
+
+        // GameObject busterClone = (GameObject)Instantiate(busterRef);
+        // busterClone.transform.position = transform.position;
+        // busterClone.SetActive(true);
+        // Destroy(gameObject);
     }
 }

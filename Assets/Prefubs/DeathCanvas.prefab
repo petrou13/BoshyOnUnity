@@ -69,8 +69,8 @@ MonoBehaviour:
   m_text: "\u0418\u0413\u0420\u0410 \u041E\u041A\u041E\u041D\u0427\u0415\u041D\u0410\n\u041D\u0410\u0416\u041C\u0418\u0422\u0415
     \"R\" \u0414\u041B\u042F \u0420\u0415\u0421\u0422\u0410\u0420\u0422\u0410"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 59517a4936ec1384a8729a55f85b882c, type: 2}
-  m_sharedMaterial: {fileID: 8077744171009852230, guid: 59517a4936ec1384a8729a55f85b882c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 629630378e9711d47981b76faef284d2, type: 2}
+  m_sharedMaterial: {fileID: 6327177186147027018, guid: 629630378e9711d47981b76faef284d2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -5,11 +5,13 @@ public class GravityButton : MonoBehaviour
 {
     private Rigidbody2D playerBody;  //тело игрока - смена гравитации
     private GameObject player; //поворот модели игрока
+    private PlayerMovement playerMovement;  //переприсваивание isGravityChanged
     public BoxCollider2D boxCollider;  //колайдер кнопки
     void Start()
     {
         playerBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     IEnumerator ChangeGravity()  //смена гравитации и поворот объекта игрока
@@ -18,7 +20,7 @@ public class GravityButton : MonoBehaviour
         player.transform.Rotate(180f, 0f, 0f);
         
         boxCollider.enabled = false;  //исправление баги с многократным вхождением в триггер
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         boxCollider.enabled = true;
     }
 
@@ -26,6 +28,7 @@ public class GravityButton : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            playerMovement.isGravityChanged = !playerMovement.isGravityChanged;
             StartCoroutine(ChangeGravity());
         }
     }

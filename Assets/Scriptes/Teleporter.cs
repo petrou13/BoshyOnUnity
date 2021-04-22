@@ -4,8 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class Teleporter : MonoBehaviour
 {
+    public Vector2 nextWorldStartPosition;
+    private GameManager gameManager;
     public string sceneName; //название сцены, в которую телепортируемся
     public Animator animator; //аниматор камеры
+    private void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
     void OnTriggerEnter2D(Collider2D other)  //старт корутины телепорта
     {
         if (other.CompareTag("Player"))
@@ -27,6 +33,7 @@ public class Teleporter : MonoBehaviour
     {
         animator.SetTrigger("Teleport");
         yield return new WaitForSeconds(0.95f);
+        gameManager.savedPosition = nextWorldStartPosition;
         SceneManager.LoadScene(sceneName);
     }
 }

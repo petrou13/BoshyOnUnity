@@ -18,6 +18,7 @@ TagManager:
   - DialogCanvas
   - GravityButton
   - Edge
+  - GroundCheck
   layers:
   - Default
   - TransparentFX

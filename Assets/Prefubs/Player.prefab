@@ -113,20 +113,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.005072031, y: 0.07000003}
-      - {x: -0.055404477, y: -0.020958515}
-      - {x: -0.055243373, y: -0.040075272}
-      - {x: -0.025657296, y: -0.040475875}
-      - {x: -0.025482535, y: -0.05940345}
-      - {x: -0.0359916, y: -0.060293652}
-      - {x: -0.03459382, y: -0.07024628}
-      - {x: 0.035182767, y: -0.07040442}
-      - {x: 0.03432113, y: -0.060830712}
-      - {x: 0.024885118, y: -0.059919506}
-      - {x: 0.025432885, y: -0.04016432}
-      - {x: 0.054789066, y: -0.039819866}
-      - {x: 0.055, y: -0.02014965}
-      - {x: 0.0047784075, y: 0.07}
+    - - {x: -0.005, y: 0.07}
+      - {x: -0.055, y: -0.02}
+      - {x: -0.055, y: -0.04}
+      - {x: -0.035, y: -0.06}
+      - {x: -0.035, y: -0.07}
+      - {x: 0.035, y: -0.07}
+      - {x: 0.035, y: -0.06}
+      - {x: 0.055, y: -0.04}
+      - {x: 0.055, y: -0.02}
+      - {x: 0.005, y: 0.07}
 --- !u!50 &2946787967545474427
 Rigidbody2D:
   serializedVersion: 4
@@ -143,7 +139,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d0e772fd159b17945894813d3da514e2, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -162,16 +158,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathScreen: {fileID: 0}
   groundCheck: {fileID: 2946787968028444722}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  facingRight: 1
   moveSpeed: 1
   jumpForce: 1.75
   maxSpeed: 3
   jumpTime: 0.125
-  curJumps: 0
+  curJumps: 1
   maxJumps: 2
   gravityJumping: 0
+  movement: {x: 0, y: 0}
 --- !u!114 &2946787967545474429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,9 +222,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946787968028444722}
+  - component: {fileID: 7428629460532978471}
+  - component: {fileID: 519871352917243604}
   m_Layer: 0
   m_Name: groundCheck
-  m_TagString: Untagged
+  m_TagString: GroundCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -242,9 +239,51 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2946787968028444725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.069, z: 0}
+  m_LocalPosition: {x: -0.015, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2946787967915900876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7428629460532978471
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2946787968028444725}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000145, y: -0.05575}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07, y: 0.0295}
+  m_EdgeRadius: 0
+--- !u!114 &519871352917243604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2946787968028444725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4998bb40688e0aa46becefe20fa078cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
