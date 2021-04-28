@@ -68,7 +68,9 @@
      <Compile Include="Assets\Scriptes\JumpBuster.cs" />
      <Compile Include="Assets\Scriptes\Enemy.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scriptes\GroundCheck.cs" />
      <Compile Include="Assets\Scriptes\PlayerMovement.cs" />
+     <Compile Include="Assets\Scriptes\TutorialDeathZone.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -84,8 +86,11 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-     <Compile Include="Assets\Scriptes\TutorialDeathZone.cs" />
-     <Compile Include="Assets\Scriptes\GroundCheck.cs" />
+     <Compile Include="Assets\Scriptes\MainMenu.cs" />
+     <Compile Include="Assets\Scriptes\OptionsMenu.cs" />
+     <Compile Include="Assets\Scriptes\PlayerData.cs" />
+     <Compile Include="Assets\Scriptes\SaveSystem.cs" />
+     <Compile Include="Assets\Scriptes\PauseMenu.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

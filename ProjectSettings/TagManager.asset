@@ -19,6 +19,8 @@ TagManager:
   - GravityButton
   - Edge
   - GroundCheck
+  - NewGameWarning
+  - ContinueButton
   layers:
   - Default
   - TransparentFX
