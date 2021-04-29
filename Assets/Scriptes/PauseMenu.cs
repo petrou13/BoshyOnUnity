@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
     public GameObject pauseMenu;
+    public GameObject settingsMenu;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        settingsMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }

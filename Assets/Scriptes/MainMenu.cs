@@ -3,17 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // private void Start()  //изменял ли игрок настроки звука и музыки
-    // {
-    //     if (PlayerPrefs.HasKey("musicVolume"))
-    //     {
-    //         GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("musicVolume");
-    //     }
-    //     if (PlayerPrefs.HasKey("sfxVolume"))
-    //     {
-    //         GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("sfxVolume");
-    //     }
-    // }
     private GameObject continueBtn, warning;
 
     private void Start()
