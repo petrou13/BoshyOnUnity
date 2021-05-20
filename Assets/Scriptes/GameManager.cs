@@ -3,10 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    GameObject player;  //игрок
-    [SerializeField]
     public Vector2 savedPosition;  //сохраненная позиция
     public int scene;  //сохраненная сцена
+    
+    GameObject player;  //игрок
+
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))   //перезагрузка текущей сцены с чекпоинтами
+        if (Input.GetKeyDown(KeyCode.R) && Time.timeScale != 0)   //перезагрузка текущей сцены с чекпоинтами
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

@@ -5,6 +5,7 @@ public class Checkpoint : MonoBehaviour
 {
     GameManager gameManager;  //сохранение
     GameObject player;  //игрок
+    
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();

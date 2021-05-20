@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health = 1;
     public GameObject deathEffect;
+    public int health = 1;
 
     public void TakeDamage(int damage) //получение урона
     {

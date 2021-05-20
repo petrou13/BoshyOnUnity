@@ -21,6 +21,8 @@ TagManager:
   - GroundCheck
   - NewGameWarning
   - ContinueButton
+  - Pinguin
+  - AudioSource
   layers:
   - Default
   - TransparentFX

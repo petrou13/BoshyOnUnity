@@ -1,11 +1,15 @@
-using TMPro;
 using UnityEngine;
 
 public class TutorialSwitch : MonoBehaviour
 {
     public TutorialDeathZone zone;
     public GameObject activeFrame;
+    private PlayerMovement _playerMovement;
 
+    private void Start()
+    {
+        _playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -32,7 +36,7 @@ public class TutorialSwitch : MonoBehaviour
         {
             zone.restartPosition = new Vector3(14.481f, -2.46f, 0f);
         }
-        if(other.CompareTag("Player") && activeFrame.name == "FrameSix")
+        if (other.CompareTag("Player") && activeFrame.name == "FrameSix")
         {
             zone.restartPosition = new Vector3(18.788f, -2.464f, 0f);
         }
@@ -40,7 +44,7 @@ public class TutorialSwitch : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !_playerMovement.isDead)
         {
             activeFrame.SetActive(false);
         }

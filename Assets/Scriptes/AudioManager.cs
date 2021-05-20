@@ -7,12 +7,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer mixer;  //аудиомиксер
-    private int firstPlayInt;  //это первый запуск?
     public Slider musicSlider, sfxSlider;  //слайдеры громкости музыки и звуков
     public float musicFloat, sfxFloat;  //значения громкости музыки и звуков
+
+    [SerializeField] private AudioClip deathMusic;  //музыка при смерти
+    [SerializeField] private AudioSource audioSource;  //источник музыки
+    private int firstPlayInt;  //это первый запуск?
+    private bool isPaused;  //игра на паузе
+
     void Start()
     {
         firstPlayInt = PlayerPrefs.GetInt("FirstPlay");
+        audioSource = GetComponent<AudioSource>();
 
         if (LoadAudioSettings() != null)  //если есть настройки аудио
         {
@@ -50,6 +56,28 @@ public class AudioManager : MonoBehaviour
             sfxSlider.value = sfxFloat;
             mixer.SetFloat("SFXVol", sfxFloat);
         }
+
+    }
+
+    private void Update()
+    {
+        if (Time.timeScale == 0)  //пауза проигрывание во время паузы игры
+        {
+            audioSource.Pause();
+            isPaused = true;
+        }
+        else if (Time.timeScale == 1 && isPaused)  //возобновление музыки
+        {
+            audioSource.Play();
+            isPaused = false;
+        }
+    }
+
+    public void PlayerDead()
+    {
+        audioSource.Stop();
+        audioSource.clip = deathMusic;
+        audioSource.Play();
     }
 
     public static void SaveSoundSettings(AudioManager manager)  //сохранение настроек аудио

@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Weapon weapon;
-    public float bulletSpeed;
-    public int damage = 1;
     public GameObject impactEffect;
     public Rigidbody2D body;
+    public float bulletSpeed;
+    public int damage = 1;
+    
+    private Weapon weapon;
+
     void Start()
     {
         body.velocity = transform.right * bulletSpeed;  //передвижение пули

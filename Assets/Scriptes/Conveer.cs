@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Conveer : MonoBehaviour
 {
+    public float giveSpeed = 0.8f;  //скорость, которая дается игроку через конвееры
+
     private GameObject player;  //игрок
     private PlayerMovement facing;
-    public float giveSpeed = 0.8f;  //скорость, которая дается игроку через конвееры
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");

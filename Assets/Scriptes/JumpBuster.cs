@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class JumpBuster : MonoBehaviour
 {
-    private PlayerMovement player;  //игрок
     public float respawnTime = 1f;
-    public Object busterRef;
+
+    private PlayerMovement player;  //игрок
+    private float originalY;  //изначальная позиция по Y
+    [SerializeField] private float floatStrength = 0.01f;  //высота полета
+    [SerializeField] private int timeScale = 5;  //ускорение полета
+
     void Start()
     {
-        //busterRef = Resources.Load("JumpBuster");
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();  //поиск игрока
+        originalY = transform.position.y;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -28,10 +32,10 @@ public class JumpBuster : MonoBehaviour
     void RespawnBuster()  //респавн бустера
     {
         gameObject.SetActive(true);
+    }
 
-        // GameObject busterClone = (GameObject)Instantiate(busterRef);
-        // busterClone.transform.position = transform.position;
-        // busterClone.SetActive(true);
-        // Destroy(gameObject);
+    private void Update()  //передвижение вверх-вниз
+    {
+        transform.position = new Vector2(transform.position.x, originalY + (Mathf.Sin(Time.time * timeScale) * floatStrength));
     }
 }

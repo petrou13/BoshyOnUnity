@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class GravityButton : MonoBehaviour
 {
+    public BoxCollider2D boxCollider;  //колайдер кнопки
+
     private Rigidbody2D playerBody;  //тело игрока - смена гравитации
     private GameObject player; //поворот модели игрока
     private PlayerMovement playerMovement;  //переприсваивание isGravityChanged
-    public BoxCollider2D boxCollider;  //колайдер кнопки
+    
     void Start()
     {
         playerBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();

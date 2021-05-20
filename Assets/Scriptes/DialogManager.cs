@@ -6,9 +6,10 @@ public class DialogManager : MonoBehaviour
 {
     public Animator animator; //аниматор текста
     public TextMeshProUGUI textDisplay;  //выводимый текст
-    private Canvas dialogCanvas;  //сам canvas диалога
     public string[] dialog;  //предложения в диалоге
     public float typingSpeed;  //скорость появления каждой буквы в предложении
+    
+    private Canvas dialogCanvas;  //сам canvas диалога
     private float memoriseTypingSpeed;  //запоминание скорости появления букв
     private int index;  //счетчик предложений
     private bool canContinue = true, dialogEnded = false;  //фикс многократного нажатия

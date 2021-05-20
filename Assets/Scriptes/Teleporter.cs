@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
 {
     public Vector2 nextWorldStartPosition;
-    private GameManager gameManager;
-    public string sceneName; //название сцены, в которую телепортируемся
     public Animator animator; //аниматор камеры
+    public string sceneName; //название сцены, в которую телепортируемся
+
+    private GameManager gameManager;
+    
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();

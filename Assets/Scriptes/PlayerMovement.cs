@@ -1,21 +1,23 @@
 using UnityEngine;
-
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject deathScreen;  //скрин после смерти
+    public Transform groundCheck;  //для проверки нахождения игрока на земле
+    public Vector2 movement = new Vector2();  //передвижение перса
+    public bool facingRight = true; //isMoving,
+    public float moveSpeed = 1, jumpForce = 1.75f, maxSpeed = 3, jumpTime = 0.125f;  //переменные ходьбы, прыжка, максимальной скорости игрока, прыжка по нажатию
+    public int curJumps = 0;  //текущее количество прыжков, выполненное до приземления
+    public bool gravityJumping = false;  //включено ли изменение гравитации игрока по нажатию на кнопку прыжка
+    public bool isGravityChanged = false;  //изменена ли гравитация
+    public bool isDead = false;  //для объектов, которые респавняться, чтобы не было ошибок
+
+    [SerializeField] private int maxJumps = 2; //максимальное количество прыжков
     private GameManager gameManager;  //работа с чекпоинтами и перезагрузкой сцены
     private Rigidbody2D body;  //тело игрока
     private SpriteRenderer spriteRenderer;  //спрайт игрока
-    public GameObject deathScreen;  //скрин после смерти
-    public Transform groundCheck;  //для проверки нахождения игрока на земле
     private bool isGrounded, isJumping = false;
-    public bool facingRight = true; //isMoving,
-    public float moveSpeed = 1, jumpForce = 1.75f, maxSpeed = 3, jumpTime = 0.125f;  //переменные ходьбы, прыжка, максимальной скорости игрока, прыжка по нажатию
-    public int curJumps = 1, maxJumps = 2;  //текущее количество прыжков, выполненное до приземления и максимальное количество прыжков
     private float jumpTimeCounter;  //для работы прыжка по нажатию клавиши
-    public bool gravityJumping = false;  //включено ли изменение гравитации игрока по нажатию на кнопку прыжка
-    public bool isGravityChanged = false;  //изменена ли гравитация
-    public Vector2 movement = new Vector2();  //передвижение перса
-    public bool isDead = false;  //для объектов, которые респавняться, чтобы не было ошибок
+    private AudioManager _audioManager;
 
     void Start()
     {
@@ -23,17 +25,31 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         transform.position = gameManager.savedPosition;  //сохраненная позиция
+        _audioManager = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioManager>();
     }
 
     void Update()
     {
+        body.velocity = Vector2.ClampMagnitude(body.velocity, maxSpeed);  //максимальная скорость
+
+        isGrounded = transform.Find("groundCheck").GetComponent<GroundCheck>().isGrounded;  //проверка есть ли под игроком земля
+
+        if (isGrounded)   //сброс счетчика текущих прыжков при приземлении
+        {
+            curJumps = 0;
+        }
+
         Move();
+
+        GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(Input.GetAxisRaw("Horizontal") * moveSpeed));
 
         if (!gravityJumping)
         {
             if (Input.GetKeyDown(KeyCode.Z) && isGrounded)  //прыжок на земле
             {
                 Jump();
+
+                SFXManager.PlaySound("jump1");  //звук прыжка
                 curJumps = 0;
             }
             if (Input.GetKey(KeyCode.Z) && isJumping) //увеличение высоты прыжка по нажатию
@@ -45,10 +61,17 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = false;
                 curJumps++;
             }
-            if (Input.GetKeyDown(KeyCode.Z) && curJumps < maxJumps && !isGrounded)  //двойной прыжок
+            if (Input.GetKeyDown(KeyCode.Z) && !isGrounded && curJumps < maxJumps)  //двойной прыжок
             {
+                if (curJumps < 1)
+                {
+                    curJumps++;
+                }
+
                 Jump();
                 JumpByHolding();
+
+                SFXManager.PlaySound("jump2");  //звук двойного прыжка
             }
         }
         else
@@ -57,18 +80,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 ChangeGravity();
             }
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        body.velocity = Vector2.ClampMagnitude(body.velocity, maxSpeed);  //максимальная скорость
-
-        isGrounded = transform.Find("groundCheck").GetComponent<GroundCheck>().isGrounded;  //проверка есть ли под игроком земля
-
-        if (isGrounded && curJumps == 2)   //сброс счетчика текущих прыжков при приземлении
-        {
-            curJumps = 0;
         }
     }
 
@@ -145,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isDead = true;
         Destroy(gameObject);
+        _audioManager.PlayerDead();
         deathScreen.SetActive(true);
     }
 
@@ -155,5 +167,4 @@ public class PlayerMovement : MonoBehaviour
             Dead();
         }
     }
-
 }
