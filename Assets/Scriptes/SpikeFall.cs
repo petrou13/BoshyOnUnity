@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpikeFall : MonoBehaviour
 {
     [SerializeField] private GameObject spike;  //шипы
-    [SerializeField] private float fallingSpeed = 0.005f; //скорость падения
+    [SerializeField] private float fallingSpeed = 0.05f; //скорость падения
     private bool isFalling = false;  //падает ли блок
     private float originalY;  //изначальное положение по Y
     private void OnTriggerEnter2D(Collider2D other)  //игрок заходит - начинает падать
@@ -14,10 +14,11 @@ public class SpikeFall : MonoBehaviour
         if (other.tag == "Player")
         {
             isFalling = true;
+            spike.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isFalling)  //если падает
         {

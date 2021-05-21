@@ -5,13 +5,14 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;  //для проверки нахождения игрока на земле
     public Vector2 movement = new Vector2();  //передвижение перса
     public bool facingRight = true; //isMoving,
-    public float moveSpeed = 1, jumpForce = 1.75f, maxSpeed = 3, jumpTime = 0.125f;  //переменные ходьбы, прыжка, максимальной скорости игрока, прыжка по нажатию
+    public float moveSpeed = 1, jumpForce = 1.9f, maxSpeed = 3, jumpTime = 0.125f;  //переменные ходьбы, прыжка, максимальной скорости игрока, прыжка по нажатию
     public int curJumps = 0;  //текущее количество прыжков, выполненное до приземления
     public bool gravityJumping = false;  //включено ли изменение гравитации игрока по нажатию на кнопку прыжка
     public bool isGravityChanged = false;  //изменена ли гравитация
     public bool isDead = false;  //для объектов, которые респавняться, чтобы не было ошибок
 
     [SerializeField] private int maxJumps = 2; //максимальное количество прыжков
+    [SerializeField] private GameObject bloodParticle;
     private GameManager gameManager;  //работа с чекпоинтами и перезагрузкой сцены
     private Rigidbody2D body;  //тело игрока
     private SpriteRenderer spriteRenderer;  //спрайт игрока
@@ -155,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
     public void Dead()  //смерть гг
     {
         isDead = true;
+        Instantiate(bloodParticle, transform.position, Quaternion.identity);  //частицы крови при смерти
         Destroy(gameObject);
         _audioManager.PlayerDead();
         deathScreen.SetActive(true);

@@ -162,7 +162,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   facingRight: 1
   moveSpeed: 1
-  jumpForce: 1.75
+  jumpForce: 1.9
   maxSpeed: 3
   jumpTime: 0.125
   curJumps: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   isGravityChanged: 0
   isDead: 0
   maxJumps: 2
+  bloodParticle: {fileID: 0}
 --- !u!114 &2946787967545474429
 MonoBehaviour:
   m_ObjectHideFlags: 0

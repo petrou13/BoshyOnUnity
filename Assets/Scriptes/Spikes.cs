@@ -20,11 +20,11 @@ public class Spikes : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(isMoving)
         {
-            transform.position = new Vector2(transform.position.x, originalY + (Mathf.Sin(Time.time * timeScale) * floatStrength));
+            transform.position = new Vector2(transform.position.x, originalY + (Mathf.Sin(Time.time * timeScale) * floatStrength));  //движение вверх-вниз
         }
     }
 }
