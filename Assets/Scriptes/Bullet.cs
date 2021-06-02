@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject impactEffect;
-    public Rigidbody2D body;
-    public float bulletSpeed;
-    public int damage = 1;
+    public GameObject impactEffect;  //эффект во время столкновения с чем-то
+    public Rigidbody2D body;  //тело пули
+    public float bulletSpeed;  //скорость пули
+    public int damage = 1;  //наносимый урон
     
-    private Weapon weapon;
+    private Weapon weapon;  //скрипт оружия игрока
 
     void Start()
     {

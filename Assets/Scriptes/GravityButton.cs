@@ -8,7 +8,7 @@ public class GravityButton : MonoBehaviour
     private Rigidbody2D playerBody;  //тело игрока - смена гравитации
     private GameObject player; //поворот модели игрока
     private PlayerMovement playerMovement;  //переприсваивание isGravityChanged
-    
+
     void Start()
     {
         playerBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();

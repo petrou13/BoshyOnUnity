@@ -136,7 +136,7 @@ TextureImporter:
       name: PlayerMovement_1
       rect:
         serializedVersion: 2
-        x: 14
+        x: 17
         y: 0
         width: 14
         height: 14
@@ -157,7 +157,7 @@ TextureImporter:
       name: PlayerMovement_2
       rect:
         serializedVersion: 2
-        x: 28
+        x: 34
         y: 0
         width: 14
         height: 14

@@ -9,7 +9,7 @@ public class Teleporter : MonoBehaviour
     public string sceneName; //название сцены, в которую телепортируемся
 
     private GameManager gameManager;
-    
+
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();

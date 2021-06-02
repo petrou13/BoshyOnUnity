@@ -7,9 +7,11 @@ public class Spikes : MonoBehaviour
     [SerializeField] private float floatStrength = 0.01f;  //высота полета
     [SerializeField] private int timeScale = 5;  //ускорение полета
     [SerializeField] private bool isMoving = false;  //оно двигается
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        originalY = transform.position.y;
     }
 
     void OnTriggerEnter2D(Collider2D other)

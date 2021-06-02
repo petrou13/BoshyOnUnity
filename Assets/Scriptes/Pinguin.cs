@@ -10,6 +10,7 @@ public class Pinguin : MonoBehaviour
     [SerializeField] private int timeScaleX = 20;  //ускорение полета по оси X
     private PlayerMovement _playerMovement;  //скрипт игрока    
     private GameObject _player;  //игрок
+
     void Start()
     {
         originalX = transform.position.x;
@@ -18,7 +19,7 @@ public class Pinguin : MonoBehaviour
         _playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position = new Vector2(originalX + (Mathf.Cos(Time.time * timeScaleX) * floatStrengthX), originalY + (Mathf.Sin(Time.time * timeScaleY) * floatStrengthY));
     }

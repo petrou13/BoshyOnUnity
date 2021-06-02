@@ -32,94 +32,69 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         body.velocity = Vector2.ClampMagnitude(body.velocity, maxSpeed);  //максимальная скорость
-
         isGrounded = transform.Find("groundCheck").GetComponent<GroundCheck>().isGrounded;  //проверка есть ли под игроком земля
 
-        if (isGrounded)   //сброс счетчика текущих прыжков при приземлении
+        if (isGrounded && !isJumping)   //сброс счетчика текущих прыжков при приземлении
         {
             curJumps = 0;
         }
 
         Move();
-
         GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(Input.GetAxisRaw("Horizontal") * moveSpeed));
 
         if (!gravityJumping)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && isGrounded)  //прыжок на земле
-            {
-                Jump();
-
-                SFXManager.PlaySound("jump1");  //звук прыжка
-                curJumps = 0;
-            }
-            if (Input.GetKey(KeyCode.Z) && isJumping) //увеличение высоты прыжка по нажатию
-            {
-                JumpByHolding();
-            }
-            if (Input.GetKeyUp(KeyCode.Z) && isJumping) //игрок отпустил клавишу прыжка
-            {
-                isJumping = false;
-                curJumps++;
-            }
-            if (Input.GetKeyDown(KeyCode.Z) && !isGrounded && curJumps < maxJumps)  //двойной прыжок
-            {
-                if (curJumps < 1)
-                {
-                    curJumps++;
-                }
-
-                Jump();
-                JumpByHolding();
-
-                SFXManager.PlaySound("jump2");  //звук двойного прыжка
-            }
+            Jump();
         }
-        else
+        else if (Input.GetKeyDown(KeyCode.Z) && isGrounded)  //прыжок на земле
         {
-            if (Input.GetKeyDown(KeyCode.Z) && isGrounded)  //прыжок на земле
-            {
-                ChangeGravity();
-            }
+            ChangeGravity();
         }
     }
 
     void Jump()  //прыжок
     {
-        isJumping = true;
-        jumpTimeCounter = jumpTime;
-        if (isGravityChanged)
+        if (Input.GetKeyDown(KeyCode.Z) && curJumps < maxJumps)  //прыжок на земле
         {
-            movement.y = -jumpForce;
-            body.velocity = new Vector2(body.velocity.x, movement.y);
-        }
-        else
-        {
-            movement.y = jumpForce;
-            body.velocity = new Vector2(body.velocity.x, movement.y);
-        }
-    }
+            curJumps++;  //увеличение количества текущих прыжков
+            jumpTimeCounter = jumpTime;  //сброс таймера прыжка
 
-    void JumpByHolding()  //удержание клавиши приводит к увеличению высоты прыжка
-    {
-        if (jumpTimeCounter > 0)
-        {
-            if (isGravityChanged)
+            if (!isGrounded && curJumps < maxJumps)  //если первый прыжок начинается в полете
             {
-                movement.y = -jumpForce;
-                body.velocity = new Vector2(body.velocity.x, movement.y);
+                curJumps++;
             }
-            else
+
+            if (curJumps == 1)  //звук первого прыжка
             {
-                movement.y = jumpForce;
-                body.velocity = new Vector2(body.velocity.x, movement.y);
+                SFXManager.PlaySound("jump1");
             }
-            jumpTimeCounter -= Time.deltaTime;
+            else if (curJumps >= 2)
+            {
+                SFXManager.PlaySound("jump2");  //звук двойного прыжка
+            }
+            isJumping = true;  //игрок прыгает
         }
-        else
+
+        if (Input.GetKey(KeyCode.Z) && isJumping) //увеличение высоты прыжка по нажатию
+        {
+            jumpTimeCounter -= Time.deltaTime;
+            if (jumpTimeCounter > 0)
+            {
+                if (isGravityChanged)
+                {
+                    movement.y = -jumpForce;
+                }
+                else
+                {
+                    movement.y = jumpForce;
+                }
+                body.velocity = new Vector2(body.velocity.x, movement.y);
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Z) && isJumping) //игрок отпустил клавишу прыжка
         {
             isJumping = false;
-            curJumps++;
         }
     }
 

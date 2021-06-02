@@ -6,13 +6,15 @@ public class CursorMovement : MonoBehaviour
     [DllImport("user32.dll")]
     static extern bool SetCursorPos(int X, int Y);  //передвинуть курсор куда-то
     [SerializeField] private float cursorSpeed = 1f;  //скорость передвижения курсора
+    [SerializeField] private float timeBeforeMoving = 5;  //время до движения курсора
+    [SerializeField] private bool isCursorDeadly = true; //убивает ли курсор
+    [SerializeField] private bool isCursorTeleport = false;
     private GameObject player;  //игрок
     private PlayerMovement _playerMovement;  //скрипт игрока
     private Vector2 cursorPos;  //где находится курсор
     private Vector2 moveTo;  //куда курсор двигается
     private bool isMoving;  //игрок двигает курсор
     private bool onScreen; //курсор на экране
-    [SerializeField] private float timeBeforeMoving = 5;  //время до движения курсора
 
     void Start()
     {
@@ -22,25 +24,45 @@ public class CursorMovement : MonoBehaviour
         moveTo = Input.mousePosition;
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            isCursorDeadly = !isCursorDeadly;
+            isCursorTeleport = !isCursorTeleport;
+        }
+        if (isCursorTeleport && player != null)
+        {
+            cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                player.transform.position = cursorPos;
+            }
+        }
+    }
+
     void FixedUpdate()
     {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);  //считывание наведение курсора на игрока
-
-        MouseMoved();
-        MouseNotAtScreen();
-
-        if (timeBeforeMoving >= 0)  //таймер для запуска передвижения курсора
+        if (isCursorDeadly && Camera.main != null)
         {
-            timeBeforeMoving -= Time.deltaTime;
-        }
-        else if (!_playerMovement && Time.timeScale != 0 && !isMoving && onScreen && timeBeforeMoving <= 0)
-        {
-            CursorMove();
-        }
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);  //считывание наведение курсора на игрока
 
-        if (hit.collider != null && hit.collider.tag == ("Player") && onScreen)  //смерть игрока при достижении его курсором
-        {
-            _playerMovement.Dead();
+            MouseMoved();
+            MouseNotAtScreen();
+
+            if (timeBeforeMoving >= 0)  //таймер для запуска передвижения курсора
+            {
+                timeBeforeMoving -= Time.deltaTime;
+            }
+            else if (_playerMovement != null && Time.timeScale != 0 && !isMoving && onScreen && timeBeforeMoving <= 0)
+            {
+                CursorMove();
+            }
+
+            if (hit.collider != null && hit.collider.tag == ("Player") && onScreen)  //смерть игрока при достижении его курсором
+            {
+                _playerMovement.Dead();
+            }
         }
     }
 
@@ -101,4 +123,11 @@ public class CursorMovement : MonoBehaviour
         //SetCursorPos(Convert.ToInt32(Camera.main.WorldToScreenPoint(cursorMove).x), Screen.height - Convert.ToInt32(Camera.main.WorldToScreenPoint(cursorMove).y));
     }
 
+    public PlayerMovement PlayerMovement
+    {
+        get => default;
+        set
+        {
+        }
+    }
 }

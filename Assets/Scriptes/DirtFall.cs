@@ -2,19 +2,33 @@ using UnityEngine;
 
 public class DirtFall : MonoBehaviour
 {
-    [SerializeField] private float fallingSpeed = 0.01f;  //скорость падения
+    [SerializeField] private float fallingSpeed = 0.005f;  //скорость падения
+    [SerializeField] private string onTag = "Player";  //падение на какой тег
+    [SerializeField] private bool offCollider = false;  //выключать коллайдер при падении
+    [SerializeField] Collider2D colliderOff;  //какой коллайдер выключаем
     private bool isFalling = false;  //падает ли блок
     private float originalY;  //изначальное положение по Y
 
     private void OnTriggerEnter2D(Collider2D other)  //игрок заходит - начинает падать
     {
         originalY = transform.position.y;
-        if (other.tag == "Player")
+        if (other.tag == onTag)  //объект падает
         {
             isFalling = true;
+            if (offCollider)  //выключение коллайдера
+            {
+                if (colliderOff == null)
+                {
+                    colliderOff.GetComponent<Collider2D>().enabled = false;
+                }
+                else
+                {
+                    colliderOff.enabled = false;
+                }
+            }
         }
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (isFalling)  //если падает
         {

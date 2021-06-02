@@ -34,7 +34,7 @@ public class JumpBuster : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    private void Update()  //передвижение вверх-вниз
+    private void FixedUpdate()  //передвижение вверх-вниз
     {
         transform.position = new Vector2(transform.position.x, originalY + (Mathf.Sin(Time.time * timeScale) * floatStrength));
     }

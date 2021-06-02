@@ -6,7 +6,7 @@ public class NPC : MonoBehaviour
     private DialogManager dialogManager;
     private Canvas dialogCanvas;
     private bool triggered = false;
-    
+
     void Start()
     {
         dialogCanvas = GameObject.FindGameObjectWithTag("DialogCanvas").GetComponent<Canvas>();

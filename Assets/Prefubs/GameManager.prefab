@@ -60,3 +60,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorSpeed: 1
   timeBeforeMoving: 5
+  isCursorDeadly: 1
+  isCursorTeleport: 0

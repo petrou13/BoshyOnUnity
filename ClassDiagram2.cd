@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AudioData">
+    <Position X="1.75" Y="1.5" Width="1.5" />
+    <AssociationLine Name="AudioManager" Type="AudioManager" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.438" Y="1.5" />
+        <Point X="2.438" Y="1.077" />
+        <Point X="4.25" Y="1.077" />
+        <Point X="4.25" Y="1.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAAACAAAA=</HashCode>
+      <FileName>Assets\Scriptes\AudioData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AudioManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AudioManager">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <AssociationLine Name="AudioData" Type="AudioData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.438" Y="1.5" />
+        <Point X="4.438" Y="0.936" />
+        <Point X="2.25" Y="0.936" />
+        <Point X="2.25" Y="1.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAUAAAgACCSAAAAAAABAAAgAAAEAEAAQEAAACAACIQA=</HashCode>
+      <FileName>Assets\Scriptes\AudioManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AudioData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Bullet">
+    <Position X="11.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAgABAAAAAAAAACUAAIAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\Bullet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Enemy" />
+      <Property Name="Weapon" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CameraMove">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAAAAAQAAAAAAAAAEAAAAAAAAAAAAAQEAA=</HashCode>
+      <FileName>Assets\Scriptes\CameraMove.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Checkpoint">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <AssociationLine Name="GameManager" Type="GameManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.531" Y="5.338" />
+        <Point X="18.531" Y="9.5" />
+        <Point X="17.25" Y="9.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AECAAAAACCAAEAAAAAAAAAAAAEAAAAABABAAAABAAAA=</HashCode>
+      <FileName>Assets\Scriptes\Checkpoint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GameManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CheckpointBullet">
+    <Position X="23.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAABAAAAAAAAAAUAAAAABAAAAAAAAEBA=</HashCode>
+      <FileName>Assets\Scriptes\CheckpointBullet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Chest">
+    <Position X="22.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQABQCAASAAAAAAAAAIAAAQAEAQABAAgQAAAAABAAA=</HashCode>
+      <FileName>Assets\Scriptes\Chest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Conveer">
+    <Position X="25" Y="3" Width="1.5" />
+    <AssociationLine Name="PlayerMovement" Type="PlayerMovement">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.067" Y="0.048" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACBAAAAAAAAAAAAAAAAAAAABAAAAABAAEAA=</HashCode>
+      <FileName>Assets\Scriptes\Conveer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CursorMovement">
+    <Position X="27.25" Y="2.25" Width="1.5" />
+    <AssociationLine Name="PlayerMovement" Type="PlayerMovement">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.074" Y="0.028" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAAqAAAAAAAAAgCAgAAABDAAABCAABAAAwEIA=</HashCode>
+      <FileName>Assets\Scriptes\CursorMovement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DialogManager">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIQAAASAAAAAAAAAAAAAAAAAQABACgQAAAAABAgQ=</HashCode>
+      <FileName>Assets\Scriptes\DialogManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirtFall">
+    <Position X="12.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAgAAAAAAAAAQEAAgAEIAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\DirtFall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAAABIAAEiAgACAEgAAAAABAAgAAAkABAAAAiAABAAg=</HashCode>
+      <FileName>Assets\Scriptes\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GroundCheck" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EnemyPatrol">
+    <Position X="19" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAEiAAACAEAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\EnemyPatrol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="15.75" Y="7.5" Width="1.5" />
+    <AssociationLine Name="PlayerData" Type="PlayerData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.774" Y="7.5" />
+        <Point X="16.774" Y="7.125" />
+        <Point X="16.32" Y="7.125" Type="JumpStart" />
+        <Point X="16.153" Y="7.125" Type="JumpEnd" />
+        <Point X="14.875" Y="7.125" />
+        <Point X="14.875" Y="4.247" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.063" Y="0.144" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAABAABAAAAAIAAAAAAAAABAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scriptes\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GravityButton">
+    <Position X="21" Y="5" Width="1.5" />
+    <AssociationLine Name="PlayerMovement" Type="PlayerMovement" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22.031" Y="5" />
+        <Point X="22.031" Y="1.188" />
+        <Point X="9" Y="1.188" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.103" Y="0.115" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAICAAABAAAAAAAAAAAEAAAAABAAAAAAAAEAQ=</HashCode>
+      <FileName>Assets\Scriptes\GravityButton.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GroundCheck">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAABAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\GroundCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JumpBuster">
+    <Position X="21" Y="8" Width="1.5" />
+    <AssociationLine Name="PlayerMovement" Type="PlayerMovement" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="9.515" />
+        <Point X="20.875" Y="9.515" />
+        <Point X="20.875" Y="6.25" />
+        <Point X="20.833" Y="6.25" Type="JumpStart" />
+        <Point X="20.667" Y="6.25" Type="JumpEnd" />
+        <Point X="18.615" Y="6.25" Type="JumpStart" />
+        <Point X="18.448" Y="6.25" Type="JumpEnd" />
+        <Point X="16.32" Y="6.25" Type="JumpStart" />
+        <Point X="16.153" Y="6.25" Type="JumpEnd" />
+        <Point X="14.958" Y="6.25" Type="JumpStart" />
+        <Point X="14.792" Y="6.25" Type="JumpEnd" />
+        <Point X="14.427" Y="6.25" Type="JumpStart" />
+        <Point X="14.26" Y="6.25" Type="JumpEnd" />
+        <Point X="14.208" Y="6.25" Type="JumpStart" />
+        <Point X="14.042" Y="6.25" Type="JumpEnd" />
+        <Point X="11.833" Y="6.25" Type="JumpStart" />
+        <Point X="11.667" Y="6.25" Type="JumpEnd" />
+        <Point X="11.583" Y="6.25" Type="JumpStart" />
+        <Point X="11.417" Y="6.25" Type="JumpEnd" />
+        <Point X="9.583" Y="6.25" Type="JumpStart" />
+        <Point X="9.417" Y="6.25" Type="JumpEnd" />
+        <Point X="9.375" Y="6.25" />
+        <Point X="9.375" Y="7.434" />
+        <Point X="8.896" Y="7.434" Type="JumpStart" />
+        <Point X="8.729" Y="7.434" Type="JumpEnd" />
+        <Point X="8.5" Y="7.434" />
+        <Point X="8.5" Y="7.184" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAABQAAAiAAAAAIAAAAAAAQAEAAAAABAAAAAAAQEAA=</HashCode>
+      <FileName>Assets\Scriptes\JumpBuster.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MainMenu">
+    <Position X="3.5" Y="6.75" Width="1.5" />
+    <AssociationLine Name="PlayerData" Type="PlayerData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5" Y="8" />
+        <Point X="5.294" Y="8" Type="JumpStart" />
+        <Point X="5.46" Y="8" Type="JumpEnd" />
+        <Point X="7.885" Y="8" Type="JumpStart" />
+        <Point X="8.052" Y="8" Type="JumpEnd" />
+        <Point X="8.729" Y="8" Type="JumpStart" />
+        <Point X="8.896" Y="8" Type="JumpEnd" />
+        <Point X="9.292" Y="8" Type="JumpStart" />
+        <Point X="9.458" Y="8" Type="JumpEnd" />
+        <Point X="9.5" Y="8" />
+        <Point X="9.5" Y="5.646" />
+        <Point X="11.417" Y="5.646" Type="JumpStart" />
+        <Point X="11.583" Y="5.646" Type="JumpEnd" />
+        <Point X="11.667" Y="5.646" Type="JumpStart" />
+        <Point X="11.833" Y="5.646" Type="JumpEnd" />
+        <Point X="13.812" Y="5.646" />
+        <Point X="13.812" Y="4.247" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgBAAAAAAAKIAABAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\MainMenu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NPC">
+    <Position X="5.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACAAAAAAAAAYAAAAMEAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\NPC.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DialogManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PauseMenu">
+    <Position X="23.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAABAAAAAAAAAAAAAAIAAAAAAgAAgAAAAABgAAAA=</HashCode>
+      <FileName>Assets\Scriptes\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pinguin">
+    <Position X="21" Y="11.5" Width="1.5" />
+    <AssociationLine Name="PlayerMovement" Type="PlayerMovement" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="13.709" />
+        <Point X="18.5" Y="13.709" />
+        <Point X="18.5" Y="11.5" />
+        <Point X="16.896" Y="11.5" Type="JumpStart" />
+        <Point X="16.729" Y="11.5" Type="JumpEnd" />
+        <Point X="16.302" Y="11.5" Type="JumpStart" />
+        <Point X="16.135" Y="11.5" Type="JumpEnd" />
+        <Point X="14.208" Y="11.5" Type="JumpStart" />
+        <Point X="14.042" Y="11.5" Type="JumpEnd" />
+        <Point X="13.5" Y="11.5" />
+        <Point X="13.5" Y="13.5" />
+        <Point X="9.375" Y="13.5" />
+        <Point X="9.375" Y="7.434" />
+        <Point X="8.896" Y="7.434" Type="JumpStart" />
+        <Point X="8.729" Y="7.434" Type="JumpEnd" />
+        <Point X="8.052" Y="7.434" Type="JumpStart" />
+        <Point X="7.885" Y="7.434" Type="JumpEnd" />
+        <Point X="7.125" Y="7.434" />
+        <Point X="7.125" Y="6.875" />
+        <Point X="7.5" Y="6.875" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAABAAAAiAAGAAAIAAACAAAAEAAAAAAAAAAAAAQEAA=</HashCode>
+      <FileName>Assets\Scriptes\Pinguin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerData">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scriptes\PlayerData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GameManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerMovement">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="GameManager" Type="GameManager" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9" Y="3.687" />
+        <Point X="10.22" Y="3.687" />
+        <Point X="10.22" Y="5.38" />
+        <Point X="11.417" Y="5.38" Type="JumpStart" />
+        <Point X="11.583" Y="5.38" Type="JumpEnd" />
+        <Point X="11.667" Y="5.38" Type="JumpStart" />
+        <Point X="11.833" Y="5.38" Type="JumpEnd" />
+        <Point X="13.729" Y="5.38" Type="JumpStart" />
+        <Point X="13.896" Y="5.38" Type="JumpEnd" />
+        <Point X="14.042" Y="5.38" Type="JumpStart" />
+        <Point X="14.208" Y="5.38" Type="JumpEnd" />
+        <Point X="14.26" Y="5.38" Type="JumpStart" />
+        <Point X="14.427" Y="5.38" Type="JumpEnd" />
+        <Point X="14.792" Y="5.38" Type="JumpStart" />
+        <Point X="14.958" Y="5.38" Type="JumpEnd" />
+        <Point X="16.236" Y="5.38" />
+        <Point X="16.236" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gkSCMgAAMqAEACQAgAAAAAAEARBAAEAIAAIgCATAgAA=</HashCode>
+      <FileName>Assets\Scriptes\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AudioManager" />
+      <Property Name="GameManager" />
+      <Property Name="GroundCheck" />
+      <Property Name="SFXManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RockSwitch">
+    <Position X="25.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAECAAABAgAAAAAAEAAAAAAAIAAAAwAAA=</HashCode>
+      <FileName>Assets\Scriptes\RockSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveSystem">
+    <Position X="11.75" Y="13.75" Width="1.5" />
+    <AssociationLine Name="GameManager" Type="GameManager" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13" Y="15.238" />
+        <Point X="13" Y="15.449" />
+        <Point X="14.042" Y="15.449" Type="JumpStart" />
+        <Point X="14.208" Y="15.449" Type="JumpEnd" />
+        <Point X="16.219" Y="15.449" />
+        <Point X="16.219" Y="9.761" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.042" Y="0.256" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="PlayerData" Type="PlayerData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.812" Y="15.238" />
+        <Point X="12.812" Y="15.613" />
+        <Point X="14.125" Y="15.613" />
+        <Point X="14.125" Y="4.247" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.103" Y="0.32" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAABABAAgAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scriptes\SaveSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GameManager" />
+      <Property Name="PlayerData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SFXManager">
+    <Position X="1.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIAAAAQAAAAhAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\SFXManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpikeFall">
+    <Position X="7.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAgAAIAAAAAAQAAAAAEAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\SpikeFall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spikes">
+    <Position X="3.75" Y="13.5" Width="1.5" />
+    <AssociationLine Name="PlayerMovement" Type="PlayerMovement" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="13.75" />
+        <Point X="9.049" Y="13.75" />
+        <Point X="9.049" Y="9.681" />
+        <Point X="8.812" Y="9.681" />
+        <Point X="8.812" Y="7.184" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="0.355" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAABQAAAiAAAAAAAAAAAAAQAEAAAAABAAABAAAAEAA=</HashCode>
+      <FileName>Assets\Scriptes\Spikes.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Teleporter">
+    <Position X="16.75" Y="11.75" Width="1.5" />
+    <AssociationLine Name="GameManager" Type="GameManager" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.844" Y="11.75" />
+        <Point X="16.844" Y="11.625" />
+        <Point X="16.812" Y="11.625" />
+        <Point X="16.812" Y="9.761" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BEAAAACAAGACAAAAAAAAAAAAAEAAAAAAAAAABABAAAA=</HashCode>
+      <FileName>Assets\Scriptes\Teleporter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GameManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TutorialDeathZone">
+    <Position X="3.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scriptes\TutorialDeathZone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TutorialSwitch">
+    <Position X="5.5" Y="10.25" Width="1.5" />
+    <AssociationLine Name="PlayerMovement" Type="PlayerMovement" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="10.562" />
+        <Point X="5.377" Y="10.562" />
+        <Point X="5.377" Y="6.625" />
+        <Point X="7.5" Y="6.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACQACAAAAAAAAIAAAAQAEAAAAAAAAAAAAAQEAA=</HashCode>
+      <FileName>Assets\Scriptes\TutorialSwitch.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PlayerMovement" />
+      <Property Name="TutorialDeathZone" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Weapon">
+    <Position X="1.75" Y="11" Width="1.5" />
+    <AssociationLine Name="SFXManager" Type="SFXManager" FixedFromPoint="true">
+      <Path>
+        <Point X="2.438" Y="11" />
+        <Point X="2.438" Y="9.954" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgQAEAAAAAIABAAAAAAAAAAAAAIAAIAAAAABAQECAAA=</HashCode>
+      <FileName>Assets\Scriptes\Weapon.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SFXManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

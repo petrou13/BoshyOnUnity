@@ -56,7 +56,6 @@ public class AudioManager : MonoBehaviour
             sfxSlider.value = sfxFloat;
             mixer.SetFloat("SFXVol", sfxFloat);
         }
-
     }
 
     private void Update()

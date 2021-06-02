@@ -6,7 +6,7 @@ public class Conveer : MonoBehaviour
 
     private GameObject player;  //игрок
     private PlayerMovement facing;
-    
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
